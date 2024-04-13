@@ -1,0 +1,25 @@
+<!-- <p>{{product.name}}</p>
+<img src="{{product.image}}" alt="" srcset=""> -->
+
+
+<div class="column gap-1 wrapper">
+    <img [src]="product.image" alt="Product Thumnail" srcset="">
+    <h2 class="title">{{product.name}}</h2>
+    <div class="row gap-05">
+        <span class="price-label"> Price:</span>
+        <span class="price"> {{product.price}}</span>
+    </div>
+
+    <!-- rating using primeng -->
+    <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+
+    <div class="row gap-1">
+        <p-button (click)="editProduct()" pTooltip="Edit this product" tooltipPosition="top" icon="pi pi-pencil"
+            severity="success" [outlined]="true" [rounded]="true" [raised]="true"></p-button>
+        <p-button (click)="confirmDelete()" #deleteBtn pTooltip="Delete this product" tooltipPosition="top"
+            icon="pi pi-trash" severity="danger" [outlined]="true" [rounded]="true" [raised]="true"></p-button>
+    </div>
+</div>
+
+
+<p-confirmPopup></p-confirmPopup>
